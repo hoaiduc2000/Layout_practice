@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initData(){
+
+
         list =  new ArrayList();
         for(int i=0; i<100;i++) {
             list.add(new Weather("Tomorrow", "Sunny", "15\u2103 - 28℃"));
