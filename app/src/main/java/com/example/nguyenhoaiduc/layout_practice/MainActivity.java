@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity{
         mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
 
+
+
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
         WeatherFragment firstFragment = new WeatherFragment();
