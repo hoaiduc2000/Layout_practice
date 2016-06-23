@@ -30,7 +30,7 @@ public class WeatherActivity extends AppCompatActivity {
             list.add(new Weather("Tomorrow", "Sunny", "15\u2103 - 28℃"));
         }
         listView = (ListView) findViewById(R.id.lv_item);
-        adapter = new ListItemAdapter(this, R.layout.list_weather,list);
+        adapter = new ListItemAdapter(this, R.layout.item_weather,list);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

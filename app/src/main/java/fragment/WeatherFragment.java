@@ -43,7 +43,7 @@ public class WeatherFragment extends Fragment {
             list.add(new Weather("Tomorrow", "Sunny", "15\u2103 - 28℃"));
         }
         listView = (ListView) getActivity().findViewById(R.id.lv_item);
-        adapter = new ListItemAdapter(getActivity(), R.layout.list_weather,list);
+        adapter = new ListItemAdapter(getActivity(), R.layout.item_weather,list);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
