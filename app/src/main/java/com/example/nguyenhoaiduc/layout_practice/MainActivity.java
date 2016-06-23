@@ -3,6 +3,8 @@ package com.example.nguyenhoaiduc.layout_practice;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.ListMenuItemView;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -32,5 +34,16 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListItemAdapter(this, R.layout.list_item,list);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+    public interface ClickListener{
+        void onClick(View view, int position);
+        void onLongClick(View view, int position);
+    }
+    public static class RecyclerTouchListener implements RecyclerView.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+        }
     }
 }
