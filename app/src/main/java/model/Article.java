@@ -7,40 +7,40 @@ import java.util.ArrayList;
  * Created by nguyen.hoai.duc on 6/22/2016.
  */
 public class Article implements Serializable {
-    private int id;
-    private String content;
-    private String url;
+    private int mId;
+    private String mContent;
+    private String mUrl;
 
-    public Article(){
+    public Article() {
 
     }
 
-    public int getId() {
-        return id;
+    public int getmId() {
+        return mId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setmId(int mId) {
+        this.mId = mId;
     }
 
-    public String getContent() {
-        return content;
+    public String getmContent() {
+        return mContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setmContent(String mContent) {
+        this.mContent = mContent;
     }
 
-    public String getUrl() {
-        return url;
+    public String getmUrl() {
+        return mUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setmUrl(String mUrl) {
+        this.mUrl = mUrl;
     }
 
-    public Article(String content, String url) {
-        this.content = content;
-        this.url = url;
+    public Article(String mContent, String mUrl) {
+        this.mContent = mContent;
+        this.mUrl = mUrl;
     }
 }

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.nguyenhoaiduc.layout_practice.R;
-import com.example.nguyenhoaiduc.layout_practice.ResultActivity;
+import com.example.nguyenhoaiduc.layout_practice.ContentActivity;
 
 import java.util.ArrayList;
 
@@ -23,18 +23,18 @@ import model.Article;
 /**
  * Created by nguyen.hoai.duc on 6/23/2016.
  */
-public class ArticleFragment extends Fragment implements ArticleAdapter.OnClickListener{
+public class ArticleFragment extends Fragment implements ArticleAdapter.OnClickListener {
     private RecyclerView mRecyclerView;
     private ArticleAdapter mArticleAdapter;
-    private ArrayList<Article> list;
-    private ImageView mImageView;
-    private View view;
+    private ArrayList<Article> mArticleArrayList;
+    private View mView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.activity_article,container,false);
+        mView = inflater.inflate(R.layout.fragment_article, container, false);
         initData();
-        return view;
+        return mView;
     }
 
     @Override
@@ -43,17 +43,16 @@ public class ArticleFragment extends Fragment implements ArticleAdapter.OnClickL
         initData();
     }
 
-    public void initData(){
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
-        mImageView = (ImageView) view.findViewById(R.id.iv_image);
+    public void initData() {
+        mRecyclerView = (RecyclerView) mView.findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        list = new ArrayList();
-        for(int i=0;i<200;i++)
-            list.add(new Article("fsdf","fsgs"));
+        mArticleArrayList = new ArrayList();
+        for (int i = 0; i < 200; i++)
+            mArticleArrayList.add(new Article("fsdf", "fsgs"));
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mArticleAdapter = new ArticleAdapter(getActivity(),list);
+        mArticleAdapter = new ArticleAdapter(getActivity(), mArticleArrayList);
         mArticleAdapter.setOnclickListener(this);
         mRecyclerView.setAdapter(mArticleAdapter);
         mArticleAdapter.notifyDataSetChanged();
@@ -62,8 +61,8 @@ public class ArticleFragment extends Fragment implements ArticleAdapter.OnClickL
 
     @Override
     public void OnClickListener(String content) {
-        Intent intent = new Intent(getActivity(), ResultActivity.class);
-        intent.putExtra("content",content);
+        Intent intent = new Intent(getActivity(), ContentActivity.class);
+        intent.putExtra("content", content);
         startActivity(intent);
 
     }
