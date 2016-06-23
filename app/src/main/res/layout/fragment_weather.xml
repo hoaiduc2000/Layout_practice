@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="#FFF96A6A"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/text_view_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Paris"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/text_view_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:text="Updated 42 mins ago"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_view_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_location"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="23&#x2103;"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor"
+            android:textSize="90dp" />
+
+        <ImageView
+            android:id="@+id/image_view_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_location"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/text_view_temp"
+            android:src="@drawable/ic_sunny" />
+
+        <TextView
+            android:id="@+id/text_view_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_view_temp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="45dp"
+            android:text="Sunny"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_view_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_temp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/text_view_status"
+            android:text="7 mph"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_view_temp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_temp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/text_view_wind"
+            android:text="16&#x2103;  -  27&#x2103;"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textColor" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_view_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="#FFA9B2E7">
+
+    </ListView>
+</LinearLayout>

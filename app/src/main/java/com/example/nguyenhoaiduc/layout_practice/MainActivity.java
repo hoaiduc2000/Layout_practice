@@ -13,18 +13,21 @@ import fragment.WeatherFragment;
 /**
  * Created by nguyen.hoai.duc on 6/23/2016.
  */
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initData();
     }
-    public void initData(){
+
+    public void initData() {
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
+
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity{
                     return firstFragment;
             }
         }
+
         @Override
         public int getCount() {
             return 2;

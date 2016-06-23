@@ -6,50 +6,50 @@ import java.io.Serializable;
  * Created by nguyen.hoai.duc on 6/22/2016.
  */
 public class Weather implements Serializable {
-    private int id;
-    private String day;
-    private String status;
-    private String temp;
+    private int mId;
+    private String mDay;
+    private String mStatus;
+    private String mTemp;
 
-    public Weather(){
+    public Weather() {
 
     }
 
-    public int getId() {
-        return id;
+    public int getmId() {
+        return mId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setmId(int mId) {
+        this.mId = mId;
     }
 
-    public String getDay() {
-        return day;
+    public String getmDay() {
+        return mDay;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setmDay(String mDay) {
+        this.mDay = mDay;
     }
 
-    public String getStatus() {
-        return status;
+    public String getmStatus() {
+        return mStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setmStatus(String mStatus) {
+        this.mStatus = mStatus;
     }
 
-    public String getTemp() {
-        return temp;
+    public String getmTemp() {
+        return mTemp;
     }
 
-    public void setTemp(String temp) {
-        this.temp = temp;
+    public void setmTemp(String mTemp) {
+        this.mTemp = mTemp;
     }
 
-    public Weather(String day, String status, String temp) {
-        this.day = day;
-        this.status = status;
-        this.temp = temp;
+    public Weather(String mDay, String mStatus, String mTemp) {
+        this.mDay = mDay;
+        this.mStatus = mStatus;
+        this.mTemp = mTemp;
     }
 }
