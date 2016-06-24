@@ -54,9 +54,9 @@ public class WeatherAdapter extends ArrayAdapter implements Filterable {
         final TextView tv_status = (TextView) convertView.findViewById(R.id.text_view_status2);
         final TextView tv_temp = (TextView) convertView.findViewById(R.id.text_view_temp3);
 
-        tv_day.setText(mWeatherArrayList.get(position).getmDay());
-        tv_status.setText(mWeatherArrayList.get(position).getmStatus());
-        tv_temp.setText(mWeatherArrayList.get(position).getmTemp());
+        tv_day.setText(mWeatherArrayList.get(position).getName());
+/*        tv_status.setText(mWeatherArrayList.get(position).getMain());
+        tv_temp.setText(mWeatherArrayList.get(position).getTemp());*/
         return convertView;
     }
 }
