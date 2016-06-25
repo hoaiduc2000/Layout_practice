@@ -20,6 +20,7 @@
             android:id="@+id/text_view_article"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="3"
             android:text="@string/article" />
 
         <TextView

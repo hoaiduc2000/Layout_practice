@@ -1,55 +1,95 @@
 package model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
  * Created by nguyen.hoai.duc on 6/22/2016.
  */
 public class Weather implements Serializable {
-    private int mId;
-    private String mDay;
-    private String mStatus;
-    private String mTemp;
+    @SerializedName("id")
+    private int id;
+    @SerializedName("name")
+    private String name;
+   @SerializedName("temp")
+    private float temp;
+    @SerializedName("temp_min")
+    private float temp_min;
+    @SerializedName("temp_max")
+    private float temp_max;
+    @SerializedName("main")
+    private String main;
+    @SerializedName("icon")
+    private String icon;
+    @SerializedName("speed")
+    private float speed;
 
     public Weather() {
 
     }
 
-    public int getmId() {
-        return mId;
+    public int getId() {
+        return id;
     }
 
-    public void setmId(int mId) {
-        this.mId = mId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getmDay() {
-        return mDay;
+    public String getName() {
+        return name;
     }
 
-    public void setmDay(String mDay) {
-        this.mDay = mDay;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getmStatus() {
-        return mStatus;
+    public float getTemp() {
+        return temp;
     }
 
-    public void setmStatus(String mStatus) {
-        this.mStatus = mStatus;
+    public void setTemp(float temp) {
+        this.temp = temp;
     }
 
-    public String getmTemp() {
-        return mTemp;
+    public float getTemp_min() {
+        return temp_min;
     }
 
-    public void setmTemp(String mTemp) {
-        this.mTemp = mTemp;
+    public void setTemp_min(float temp_min) {
+        this.temp_min = temp_min;
     }
 
-    public Weather(String mDay, String mStatus, String mTemp) {
-        this.mDay = mDay;
-        this.mStatus = mStatus;
-        this.mTemp = mTemp;
+    public float getTemp_max() {
+        return temp_max;
+    }
+
+    public void setTemp_max(float temp_max) {
+        this.temp_max = temp_max;
+    }
+
+    public String getMain() {
+        return main;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
     }
 }
