@@ -18,11 +18,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
             android:text="Paris"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor"
-            android:textSize="30dp" />
-
+            android:textSize="25dp" />
         <TextView
             android:id="@+id/text_view_time"
             android:layout_width="wrap_content"
@@ -48,12 +48,12 @@
 
         <ImageView
             android:id="@+id/image_view_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_below="@+id/text_view_location"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/text_view_temp"
             android:src="@drawable/ic_sunny" />
 
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_temp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="25dp"
             android:layout_toRightOf="@+id/text_view_status"
             android:text="7 mph"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_temp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="25dp"
             android:layout_toRightOf="@+id/text_view_wind"
             android:text="16&#x2103;  -  27&#x2103;"
             android:textAppearance="?android:attr/textAppearanceMedium"
