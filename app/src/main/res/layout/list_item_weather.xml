@@ -6,11 +6,10 @@
 
     <ImageView
         android:id="@+id/image_view_icon"
-        android:layout_width="30dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/length_30dp"
+        android:layout_height="@dimen/length_50dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/ic_sunny" />
+        android:layout_marginLeft="@dimen/margin_20dp" />
 
     <LinearLayout
         android:id="@+id/text_view_time2"
@@ -21,22 +20,30 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/text_view_day"
+            android:id="@+id/text_view_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
             android:text="09:00"
             android:textColor="@color/textColor"
-            android:textSize="15dp" />
+            android:textSize="@dimen/text_size_15dp" />
+
+        <TextView
+            android:id="@+id/text_view_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_10dp" />
 
         <TextView
             android:id="@+id/text_view_status2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
             android:text="Sunny"
             android:textColor="@color/textColor"
-            android:textSize="10dp" />
+            android:textSize="@dimen/text_size_10dp" />
     </LinearLayout>
 
     <TextView
@@ -44,10 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="@dimen/margin_135dp"
         android:layout_toRightOf="@id/text_view_time2"
         android:text="15&#x2103; - 28&#x2103;"
         android:textColor="@color/textColor"
-        android:textSize="20dp" />
+        android:textSize="@dimen/text_size_20dp" />
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ public class Main implements Serializable {
     @SerializedName("sea_level")
     private float sea_level;
 
-    public Main(){
+    public Main() {
 
     }
 

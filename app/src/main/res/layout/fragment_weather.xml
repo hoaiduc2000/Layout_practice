@@ -17,18 +17,18 @@
             android:id="@+id/text_view_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Paris"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size_25dp" />
         <TextView
             android:id="@+id/text_view_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
             android:text="Updated 42 mins ago"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor" />
@@ -38,35 +38,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_location"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:text="23&#x2103;"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:layout_marginLeft="@dimen/margin_45dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor"
-            android:textSize="90dp" />
+            android:textSize="@dimen/text_size_90dp" />
 
         <ImageView
             android:id="@+id/image_view_status"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/length_90dp"
+            android:layout_height="@dimen/length_90dp"
             android:layout_below="@+id/text_view_location"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_toRightOf="@+id/text_view_temp"
-            android:src="@drawable/ic_sunny" />
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_toRightOf="@+id/text_view_temp" />
 
         <TextView
             android:id="@+id/text_view_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/text_view_temp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="45dp"
-            android:text="Sunny"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_45dp"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor" />
 
@@ -75,10 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_temp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_25dp"
             android:layout_toRightOf="@+id/text_view_status"
-            android:text="7 mph"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor" />
 
@@ -87,10 +84,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_view_temp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginLeft="@dimen/margin_25dp"
             android:layout_toRightOf="@+id/text_view_wind"
-            android:text="16&#x2103;  -  27&#x2103;"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor" />
     </RelativeLayout>

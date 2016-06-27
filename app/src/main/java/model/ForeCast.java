@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by nguyen.hoai.duc on 6/27/2016.
  */
-public class ForeCast implements Serializable{
+public class ForeCast implements Serializable {
     @SerializedName("main")
     private Main main;
     @SerializedName("dt_txt")
@@ -18,7 +18,7 @@ public class ForeCast implements Serializable{
     @SerializedName("wind")
     private Wind wind;
 
-    public ForeCast(){
+    public ForeCast() {
 
     }
 

@@ -13,7 +13,7 @@ public class Wind implements Serializable {
     @SerializedName("deg")
     private float deg;
 
-    public Wind(){
+    public Wind() {
 
     }
 

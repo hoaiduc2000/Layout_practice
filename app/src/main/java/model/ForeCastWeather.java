@@ -13,7 +13,7 @@ public class ForeCastWeather implements Serializable {
     @SerializedName("list")
     private ArrayList<ForeCast> foreCasts;
 
-    public ForeCastWeather(){
+    public ForeCastWeather() {
 
     }
 

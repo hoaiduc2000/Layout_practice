@@ -14,7 +14,8 @@ public class Sys implements Serializable {
     private int sunrise;
     @SerializedName("sunset")
     private int sunset;
-    public Sys(){
+
+    public Sys() {
 
     }
 

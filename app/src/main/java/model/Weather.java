@@ -22,9 +22,11 @@ public class Weather implements Serializable {
     private Sys sys;
     @SerializedName("weather")
     private ArrayList<MainStatus> mainStatus;
+
     public Weather() {
 
     }
+
     public ArrayList<MainStatus> getMainStatus() {
         return mainStatus;
     }

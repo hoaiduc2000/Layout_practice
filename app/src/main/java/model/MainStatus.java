@@ -15,7 +15,7 @@ public class MainStatus implements Serializable {
     @SerializedName("icon")
     private String icon;
 
-    public MainStatus(){
+    public MainStatus() {
 
     }
 

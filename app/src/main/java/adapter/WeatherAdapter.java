@@ -25,6 +25,7 @@ import java.util.List;
 import model.ForeCast;
 import model.ForeCastWeather;
 import model.Weather;
+import utils.FileUtils;
 
 /**
  * Created by nguyen.hoai.duc on 6/22/2016.
@@ -33,12 +34,15 @@ public class WeatherAdapter extends ArrayAdapter implements Filterable {
     private Activity mContext;
     private int mLayoutId;
     private ArrayList<ForeCast> mForeCastArrayList;
+    private FileUtils mFileUtils;
 
     public WeatherAdapter(Activity context, int resource, ArrayList<ForeCast> objects) {
         super(context, resource, objects);
         this.mContext = context;
         this.mLayoutId = resource;
         this.mForeCastArrayList = objects;
+        mFileUtils = new FileUtils();
+
     }
 
     public WeatherAdapter(Context context, int resource) {
@@ -60,36 +64,21 @@ public class WeatherAdapter extends ArrayAdapter implements Filterable {
         LayoutInflater inflater = mContext.getLayoutInflater();
         convertView = inflater.inflate(mLayoutId, null);
 
-        final TextView tv_day = (TextView) convertView.findViewById(R.id.text_view_day);
-        final TextView tv_status = (TextView) convertView.findViewById(R.id.text_view_status2);
-        final TextView tv_temp = (TextView) convertView.findViewById(R.id.text_view_temp3);
-        final ImageView iv_icon = (ImageView) convertView.findViewById(R.id.image_view_icon);
+        final TextView mTextViewTime = (TextView) convertView.findViewById(R.id.text_view_time);
+        final TextView mTextViewDate = (TextView) convertView.findViewById(R.id.text_view_date);
+        final TextView mTextViewStatus = (TextView) convertView.findViewById(R.id.text_view_status2);
+        final TextView mTextViewTemp = (TextView) convertView.findViewById(R.id.text_view_temp3);
+        final ImageView mImageView = (ImageView) convertView.findViewById(R.id.image_view_icon);
 
-        Picasso.with(getContext()).load("http://openweathermap.org/img/w/"+mForeCastArrayList
-                .get(position).getMainStatus().get(0).getIcon()+".png").into(iv_icon);
-        tv_day.setText(coventerDate(mForeCastArrayList.get(position).getDt()));
-        tv_status.setText(mForeCastArrayList.get(position).getMainStatus().get(0).getMain());
-        tv_temp.setText(getRound(mForeCastArrayList.get(position).getMain().getTemp_min(),0)+"\u2103"+" - "+getRound(mForeCastArrayList.get(position).getMain().getTemp_max(),0)+"\u2103 ");
+        Picasso.with(getContext()).load("http://openweathermap.org/img/w/" + mForeCastArrayList
+                .get(position).getMainStatus().get(0).getIcon() + ".png").into(mImageView);
+        mTextViewTime.setText(mFileUtils.coventerTime(mForeCastArrayList.get(position).getDt()));
+        mTextViewDate.setText(mFileUtils.coventerDate(mForeCastArrayList.get(position).getDt()));
+        mTextViewStatus.setText(mForeCastArrayList.get(position).getMainStatus().get(0).getMain());
+        mTextViewTemp.setText(mFileUtils.getRound(mForeCastArrayList.get(position).getMain()
+                .getTemp_min(), 0) + "\u2103" + " - "
+                + mFileUtils.getRound(mForeCastArrayList.get(position).getMain().getTemp_max(), 0)
+                + "\u2103 ");
         return convertView;
-    }
-    public String coventerDate(String date){
-        String dateFormat="";
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-        try {
-            Date d = format.parse(date);
-            long mTime = d.getTime();
-            Date mDate = new Date(mTime);
-            DateFormat format2 = new SimpleDateFormat("HH:mm");
-            dateFormat = format2.format(mDate);
-            Log.d("AAAA",dateFormat);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return dateFormat;
-    }
-    public BigDecimal getRound(float d, int decimalPlace ){
-        BigDecimal bd = new BigDecimal(Float.toString(d));
-        bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
-        return bd;
     }
 }

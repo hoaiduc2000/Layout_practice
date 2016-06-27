@@ -12,7 +12,7 @@ public class ApiClient {
    // public static final String BASE_URL = "http://demo1299317.mockable.io/";
     private static Retrofit retrofit = null;
 
-    public static Retrofit getClient(){
+    public static Retrofit getClientWeather(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
