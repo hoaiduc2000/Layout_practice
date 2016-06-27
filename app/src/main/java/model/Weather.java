@@ -3,6 +3,8 @@ package model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nguyen.hoai.duc on 6/22/2016.
@@ -12,21 +14,41 @@ public class Weather implements Serializable {
     private int id;
     @SerializedName("name")
     private String name;
-   @SerializedName("temp")
-    private float temp;
-    @SerializedName("temp_min")
-    private float temp_min;
-    @SerializedName("temp_max")
-    private float temp_max;
     @SerializedName("main")
-    private String main;
-    @SerializedName("icon")
-    private String icon;
-    @SerializedName("speed")
-    private float speed;
+    private Main main;
+    @SerializedName("wind")
+    private Wind wind;
+    @SerializedName("sys")
+    private Sys sys;
+    @SerializedName("weather")
+    private ArrayList<MainStatus> mainStatus;
 
     public Weather() {
 
+    }
+
+    public ArrayList<MainStatus> getMainStatus() {
+        return mainStatus;
+    }
+
+    public void setMainStatus(ArrayList<MainStatus> mainStatus) {
+        this.mainStatus = mainStatus;
+    }
+
+    public Wind getWind() {
+        return wind;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
+    }
+
+    public Sys getSys() {
+        return sys;
+    }
+
+    public void setSys(Sys sys) {
+        this.sys = sys;
     }
 
     public int getId() {
@@ -45,51 +67,11 @@ public class Weather implements Serializable {
         this.name = name;
     }
 
-    public float getTemp() {
-        return temp;
-    }
-
-    public void setTemp(float temp) {
-        this.temp = temp;
-    }
-
-    public float getTemp_min() {
-        return temp_min;
-    }
-
-    public void setTemp_min(float temp_min) {
-        this.temp_min = temp_min;
-    }
-
-    public float getTemp_max() {
-        return temp_max;
-    }
-
-    public void setTemp_max(float temp_max) {
-        this.temp_max = temp_max;
-    }
-
-    public String getMain() {
+    public Main getMain() {
         return main;
     }
 
-    public void setMain(String main) {
+    public void setMain(Main main) {
         this.main = main;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(float speed) {
-        this.speed = speed;
     }
 }
