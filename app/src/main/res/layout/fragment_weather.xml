@@ -19,7 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_10dp"
             android:layout_marginTop="@dimen/margin_5dp"
-            android:text=""
+            android:text="Hanoi"
+            android:paddingRight="10dp"
+            android:ellipsize="end"
+            android:layout_toLeftOf="@+id/text_view_time"
+            android:layout_alignParentLeft="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColor"
             android:textSize="@dimen/text_size_25dp" />
