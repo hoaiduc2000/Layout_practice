@@ -1,6 +1,8 @@
 package fragment;
 
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.nguyenhoaiduc.layout_practice.MainActivity;
 import com.example.nguyenhoaiduc.layout_practice.R;
+import com.google.android.gms.maps.model.LatLng;
 import com.squareup.picasso.Picasso;
 
 import java.math.BigDecimal;
@@ -56,10 +60,14 @@ public class WeatherFragment extends Fragment {
     private Call<ForeCastWeather> mCallForeCastWeather;
 
     ApiInterface apiInterface;
+    private ProgressDialog mProgressDialog;
+
+    private LatLng mLatLng = new LatLng(0, 0);
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mLatLng = ((MainActivity) getActivity()).getmLatLng();
         apiInterface = ApiClient.getClientWeather().create(ApiInterface.class);
     }
 
@@ -76,7 +84,7 @@ public class WeatherFragment extends Fragment {
     }
 
     public void updateUI() {
-        mTextViewLocation.setText("Hà Nội");
+        mTextViewLocation.setText(mWeather.getName());
         mTextViewTemp.setText(mFileUtils.getRound(mWeather.getMain().getTemp(), 0) + "\u2103");
         mTextViewTemp2.setText(mFileUtils.getRound(mWeather.getMain().getTemp_min(), 0) + "\u2103"
                 + " - " + mFileUtils.getRound(mWeather.getMain().getTemp_max(), 0) + "\u2103 ");
@@ -104,19 +112,22 @@ public class WeatherFragment extends Fragment {
 
         mImageView = (ImageView) getActivity().findViewById(R.id.image_view_status);
 
-        enqueueData();
+        enqueueData("21.0306078", "105.8449229");
 
 
     }
 
-    public void enqueueData() {
-        mCallWeather = apiInterface.getCurrentWeather();
+    public void enqueueData(String lat, String lon) {
+        mProgressDialog = ProgressDialog.show(getActivity(), "Cập nhật dữ liệu", "Đang quét...");
+        mCallWeather = apiInterface.getCurrentWeather(lat, lon);
         try {
             mCallWeather.enqueue(new Callback<Weather>() {
                 @Override
                 public void onResponse(Call<Weather> call, Response<Weather> response) {
                     mWeather = response.body();
                     updateUI();
+                    if (mWeather != null && mForeCastWeather != null)
+                        mProgressDialog.dismiss();
                 }
 
                 @Override
@@ -128,7 +139,7 @@ public class WeatherFragment extends Fragment {
 
         }
 
-        mCallForeCastWeather = apiInterface.getForeCastWeather();
+        mCallForeCastWeather = apiInterface.getForeCastWeather(lat, lon);
         try {
             mCallForeCastWeather.enqueue(new Callback<ForeCastWeather>() {
                 @Override
@@ -137,7 +148,10 @@ public class WeatherFragment extends Fragment {
                     mForeCastArrayList.clear();
                     mForeCastArrayList.addAll(mForeCastWeather.getForeCasts());
                     mAdapter.notifyDataSetChanged();
+                    if (mWeather != null && mForeCastWeather != null)
+                        mProgressDialog.dismiss();
                 }
+
                 @Override
                 public void onFailure(Call<ForeCastWeather> call, Throwable t) {
 
@@ -146,14 +160,19 @@ public class WeatherFragment extends Fragment {
         } catch (Exception e) {
 
         }
+
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(mCallWeather!=null||mCallForeCastWeather!=null){
+        if (mCallWeather != null || mCallForeCastWeather != null) {
             mCallWeather.cancel();
             mCallForeCastWeather.cancel();
         }
+    }
+
+    public void setLatLon(LatLng latLng){
+        enqueueData(latLng.latitude + "", latLng.longitude + "");
     }
 }
