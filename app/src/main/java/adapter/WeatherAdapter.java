@@ -44,7 +44,6 @@ public class WeatherAdapter extends ArrayAdapter implements Filterable {
         mFileUtils = new FileUtils();
 
     }
-
     public WeatherAdapter(Context context, int resource) {
         super(context, resource);
     }
@@ -74,11 +73,10 @@ public class WeatherAdapter extends ArrayAdapter implements Filterable {
                 .get(position).getMainStatus().get(0).getIcon() + ".png").into(mImageView);
         mTextViewTime.setText(mFileUtils.coventerTime(mForeCastArrayList.get(position).getDt()));
         mTextViewDate.setText(mFileUtils.coventerDate(mForeCastArrayList.get(position).getDt()));
-        mTextViewStatus.setText(mForeCastArrayList.get(position).getMainStatus().get(0).getMain());
+        mTextViewStatus.setText(mForeCastArrayList.get(position).getMainStatus().get(0).getMain()+" - "
+                +mForeCastArrayList.get(position).getMainStatus().get(0).getDescription());
         mTextViewTemp.setText(mFileUtils.getRound(mForeCastArrayList.get(position).getMain()
-                .getTemp_min(), 0) + "\u2103" + " - "
-                + mFileUtils.getRound(mForeCastArrayList.get(position).getMain().getTemp_max(), 0)
-                + "\u2103 ");
+                .getTemp(), 0) + "\u2103");
         return convertView;
     }
 }
